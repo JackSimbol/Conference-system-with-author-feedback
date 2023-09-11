@@ -1,0 +1,22 @@
+#TODO
+
+Find the best iter nums for all algo.
+
+karger's model with lambda assist:
+    lambda is calculated with the "consistency" of assist
+    If authors consistently vote the reviewers(give the same report), 
+    then this set of authors are intuitively more "reliable"
+    Consistency = sum of authors' reports * reviewer's final rating ([0, #papers assigned to each reviewer])
+    lambda: sum of consistency(?) 
+
+What role do we expect authors' reports to play in the model?
+    In our model the authors give non-truthful reports especially when
+    the reviewers view their papers as "accepted". 
+    The only situation where authors respond truthfully is when their 
+    papers should be accepted but get "rejected". 
+    Yet it's unreliable to assume that authors may give truthful report when
+    their should-be-rejected papers are graded "accepted" by lazy reviewers.
+    On the other hand, lazy reviewers can avoid getting recognized by giving 
+    all papers "accepted".
+    What if we limit the total number of "accepted" a reviewer can give to
+    papers she reviewed(e.g. accord with the acception rate)?
